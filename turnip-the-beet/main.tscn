@@ -1,0 +1,104 @@
+[gd_scene load_steps=24 format=3 uid="uid://iymo5xfyj633"]
+
+[ext_resource type="PackedScene" uid="uid://ciwkj06jv33r2" path="res://synthesizer/synthesizer.tscn" id="1_ij7wm"]
+[ext_resource type="Script" path="res://synthesizer/sound_waves/saw_tooth_wave.gd" id="2_ybvih"]
+[ext_resource type="Script" path="res://synthesizer/melodie_player.gd" id="3_xe072"]
+[ext_resource type="Script" path="res://synthesizer/note.gd" id="4_e1jm1"]
+[ext_resource type="Script" path="res://synthesizer/melodie.gd" id="5_kuvyg"]
+
+[sub_resource type="Resource" id="Resource_iovsb"]
+script = ExtResource("2_ybvih")
+
+[sub_resource type="Resource" id="Resource_m5awm"]
+script = ExtResource("4_e1jm1")
+tone = 3
+length = 1
+
+[sub_resource type="Resource" id="Resource_7ru6o"]
+script = ExtResource("4_e1jm1")
+tone = 0
+length = 1
+
+[sub_resource type="Resource" id="Resource_6cad5"]
+script = ExtResource("4_e1jm1")
+tone = 4
+length = 1
+
+[sub_resource type="Resource" id="Resource_32q8a"]
+script = ExtResource("4_e1jm1")
+tone = 0
+length = 1
+
+[sub_resource type="Resource" id="Resource_2jli5"]
+script = ExtResource("4_e1jm1")
+tone = 5
+length = 1
+
+[sub_resource type="Resource" id="Resource_gyvcm"]
+script = ExtResource("4_e1jm1")
+tone = 0
+length = 1
+
+[sub_resource type="Resource" id="Resource_p20iw"]
+script = ExtResource("4_e1jm1")
+tone = 6
+length = 1
+
+[sub_resource type="Resource" id="Resource_gncy5"]
+script = ExtResource("4_e1jm1")
+tone = 0
+length = 1
+
+[sub_resource type="Resource" id="Resource_dtkhn"]
+script = ExtResource("4_e1jm1")
+tone = 7
+length = 1
+
+[sub_resource type="Resource" id="Resource_qgw5k"]
+script = ExtResource("4_e1jm1")
+tone = 0
+length = 1
+
+[sub_resource type="Resource" id="Resource_ijria"]
+script = ExtResource("4_e1jm1")
+tone = 1
+length = 1
+
+[sub_resource type="Resource" id="Resource_rhaml"]
+script = ExtResource("4_e1jm1")
+tone = 0
+length = 1
+
+[sub_resource type="Resource" id="Resource_3qcsn"]
+script = ExtResource("4_e1jm1")
+tone = 2
+length = 1
+
+[sub_resource type="Resource" id="Resource_y1w0v"]
+script = ExtResource("4_e1jm1")
+tone = 0
+length = 1
+
+[sub_resource type="Resource" id="Resource_ox3an"]
+script = ExtResource("4_e1jm1")
+tone = 3
+length = 3
+
+[sub_resource type="Resource" id="Resource_evn8q"]
+script = ExtResource("4_e1jm1")
+tone = 0
+length = 1
+
+[sub_resource type="Resource" id="Resource_3myie"]
+script = ExtResource("5_kuvyg")
+notes = Array[ExtResource("4_e1jm1")]([SubResource("Resource_m5awm"), SubResource("Resource_7ru6o"), SubResource("Resource_6cad5"), SubResource("Resource_32q8a"), SubResource("Resource_2jli5"), SubResource("Resource_gyvcm"), SubResource("Resource_p20iw"), SubResource("Resource_gncy5"), SubResource("Resource_dtkhn"), SubResource("Resource_qgw5k"), SubResource("Resource_ijria"), SubResource("Resource_rhaml"), SubResource("Resource_3qcsn"), SubResource("Resource_y1w0v"), SubResource("Resource_ox3an"), SubResource("Resource_evn8q")])
+
+[node name="Main" type="Node2D"]
+
+[node name="Synthesizer" parent="." instance=ExtResource("1_ij7wm")]
+sound_wave = SubResource("Resource_iovsb")
+
+[node name="MelodiePlayer" type="Node" parent="." node_paths=PackedStringArray("synthesizer")]
+script = ExtResource("3_xe072")
+melodie = SubResource("Resource_3myie")
+synthesizer = NodePath("../Synthesizer")
