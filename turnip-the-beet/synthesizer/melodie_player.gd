@@ -2,6 +2,7 @@ class_name MelodiePlayer extends Node
 
 @export var melodie: Melodie
 @export var synthesizer: Synthesizer
+@export var playing: bool = true
 
 func _ready():
 	Metronome.new_tick.connect(_on_tick_changed)
@@ -9,5 +10,7 @@ func _ready():
 
 
 func _on_tick_changed(tact: int, tick: int):
+	if not playing:
+		return
 	var note = melodie.get_note(tact, tick)
 	synthesizer.play(note)
