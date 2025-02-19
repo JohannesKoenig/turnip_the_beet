@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Plant" load_steps=2 format=3 uid="uid://dsxl7eqiutvbv"]
+
+[ext_resource type="Script" path="res://types/plant.gd" id="1_71pbx"]
+
+[resource]
+script = ExtResource("1_71pbx")
+name = ""
+season = 0
+growing_state = 0

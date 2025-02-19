@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://da880hshpodhc"]
+
+[ext_resource type="Script" path="res://view/plant_slot.gd" id="1_7xscl"]
+
+[sub_resource type="Gradient" id="Gradient_a6svp"]
+offsets = PackedFloat32Array(0.75974, 0.808442, 0.961039)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.352941, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mxvvr"]
+gradient = SubResource("Gradient_a6svp")
+width = 16
+height = 16
+fill = 2
+fill_from = Vector2(0.502294, 0.493119)
+metadata/_snap_enabled = true
+
+[node name="PlantSlot" type="Node2D"]
+script = ExtResource("1_7xscl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_mxvvr")

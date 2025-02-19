@@ -12,5 +12,7 @@ func _ready():
 func _on_tick_changed(tact: int, tick: int):
 	if not playing:
 		return
+	if melodie == null:
+		return
 	var note = melodie.get_note(tact, tick)
 	synthesizer.play(note)
