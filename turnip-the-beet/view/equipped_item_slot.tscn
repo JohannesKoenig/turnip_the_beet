@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqdjw5nh0p8q4"]
+[gd_scene load_steps=4 format=3 uid="uid://13gtusx6fplk"]
 
-[ext_resource type="Script" path="res://view/store_slot.gd" id="1_mmnnk"]
+[ext_resource type="Script" path="res://view/equipped_item_slot.gd" id="1_a5igm"]
 
 [sub_resource type="Gradient" id="Gradient_pj6qe"]
 offsets = PackedFloat32Array(0.636364, 0.756494, 0.866883)
@@ -14,7 +14,7 @@ fill = 2
 fill_from = Vector2(0.5, 0.5)
 metadata/_snap_enabled = true
 
-[node name="StoreSlot" type="Control"]
+[node name="EquippedItemSlot" type="Control"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 3
 anchors_preset = 15
@@ -25,9 +25,15 @@ offset_bottom = -230.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-script = ExtResource("1_mmnnk")
+script = ExtResource("1_a5igm")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0

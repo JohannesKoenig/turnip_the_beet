@@ -50,4 +50,4 @@ seed_texture = ExtResource("8_f31tq")
 small_texture = ExtResource("6_eu6n6")
 large_texture = ExtResource("1_ngrb7")
 ripe_texture = ExtResource("5_rsvea")
-growing_state = 3
+growing_state = 0

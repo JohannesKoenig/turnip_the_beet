@@ -1,0 +1,42 @@
+[gd_scene load_steps=9 format=3 uid="uid://wb0di3yrou7l"]
+
+[ext_resource type="PackedScene" uid="uid://d2i5xe63ic6h0" path="res://view/inventory_ui.tscn" id="1_q2brc"]
+[ext_resource type="Script" path="res://view/user_interface.gd" id="1_s6sao"]
+[ext_resource type="PackedScene" uid="uid://bs5ss57qfunhr" path="res://view/dragging_preview.tscn" id="2_ssh3m"]
+[ext_resource type="PackedScene" uid="uid://bxs6lhupssqqs" path="res://view/daytime_display.tscn" id="3_lwtp3"]
+[ext_resource type="PackedScene" uid="uid://x0spucnkn08" path="res://view/store_ui.tscn" id="4_58h5u"]
+[ext_resource type="PackedScene" uid="uid://c6mvp28plb7sy" path="res://view/money.tscn" id="5_w438f"]
+[ext_resource type="PackedScene" uid="uid://cvxtsekobub43" path="res://view/item_display_ui.tscn" id="6_0og70"]
+[ext_resource type="PackedScene" uid="uid://c4u7hi5te7ab0" path="res://view/equipped_item_display.tscn" id="8_d6k83"]
+
+[node name="UserInterface" type="CanvasLayer"]
+script = ExtResource("1_s6sao")
+
+[node name="InventoryUi" parent="." instance=ExtResource("1_q2brc")]
+metadata/_edit_use_anchors_ = true
+
+[node name="DraggingPreview" parent="." instance=ExtResource("2_ssh3m")]
+metadata/_edit_use_anchors_ = true
+
+[node name="DaytimeDisplay" parent="." instance=ExtResource("3_lwtp3")]
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="StoreUi" parent="." instance=ExtResource("4_58h5u")]
+
+[node name="Money" parent="." instance=ExtResource("5_w438f")]
+offset_top = 22.0
+offset_bottom = 22.0
+
+[node name="ItemDisplayUi" parent="." instance=ExtResource("6_0og70")]
+
+[node name="EquippedItemDisplay" parent="." instance=ExtResource("8_d6k83")]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+offset_left = 197.0
+offset_top = 93.0
+offset_right = 197.0
+offset_bottom = 93.0
+grow_horizontal = 0
+grow_vertical = 0

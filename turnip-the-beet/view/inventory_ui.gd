@@ -30,15 +30,6 @@ func _ready():
 			inventory_slot.y = y
 			grid_container.add_child(inventory_slot)
 
-func _process(delta):
-	if Input.is_action_just_pressed("Inventory"):
-		match inventory_state:
-			InventoryState.CLOSED:
-				inventory_state = InventoryState.OPEN
-			InventoryState.OPEN:
-				inventory_state = InventoryState.CLOSED
-			_:
-				inventory_state = InventoryState.CLOSED
 
 func _process_state(state: InventoryState):
 	match inventory_state:

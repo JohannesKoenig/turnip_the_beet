@@ -7,7 +7,9 @@ enum ItemDisplayState {
 
 @onready var item_display_slot_packed_scene: PackedScene = preload("res://view/item_display_slot.tscn")
 @onready var inventory_ui = $MarginContainer/HBoxContainer/InventoryUi
-@onready var sell_button = $MarginContainer/HBoxContainer/VBoxContainer/SellButton
+@onready var sell_button = $MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/SellButton
+
+@onready var label = $MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/HBoxContainer/Label
 
 @onready var grid_container = $MarginContainer/HBoxContainer/VBoxContainer/GridContainer
 
@@ -41,15 +43,6 @@ func _ready():
 			item_display_slot.y = y
 			grid_container.add_child(item_display_slot)
 
-func _process(delta):
-	if Input.is_action_just_pressed("ItemDisplay"):
-		match item_display_state:
-			ItemDisplayState.CLOSED:
-				item_display_state = ItemDisplayState.OPEN
-			ItemDisplayState.OPEN:
-				item_display_state = ItemDisplayState.CLOSED
-			_:
-				item_display_state = ItemDisplayState.CLOSED
 
 func _process_state(state: ItemDisplayState):
 	match item_display_state:
@@ -67,9 +60,12 @@ func _on_slot_clicked(slot: ItemDisplaySlot):
 
 func _on_selected_inventory_item_changed(item: Item):
 	if item != null:
+		label.text = str(item.price)
 		sell_button.disabled = false
 	else:
+		label.text = "-"
 		sell_button.disabled = true
+
 
 func _on_sell_button_pressed():
 	if Clipboard.selected_inventory_item != null:
@@ -82,3 +78,5 @@ func _on_sell_button_pressed():
 				Clipboard.selected_inventory_item_source_pos.y
 			)
 			item_display.add_value(item)
+			Clipboard.selected_inventory_item = null
+			Clipboard.selected_inventory_item_source_pos = Vector2i(-1, -1)

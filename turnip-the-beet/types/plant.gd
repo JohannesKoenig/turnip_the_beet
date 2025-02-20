@@ -4,7 +4,12 @@ enum GrowingStateType {
 	SEED,
 	SMALL,
 	LARGE,
-	RIPE
+	RIPE,
+}
+
+enum Species {
+	NONE,
+	TOMATO,
 }
 
 @export var product: Item
@@ -30,3 +35,12 @@ func get_texture()-> Texture:
 		GrowingStateType.RIPE:
 			return ripe_texture
 		_: return null
+
+static func constructor(species: Species) -> Plant:
+	match species:
+		Species.TOMATO:
+			var plant = load("res://types/plants/tomato_plant.tres").duplicate()
+			return plant
+		_:
+			return null
+			

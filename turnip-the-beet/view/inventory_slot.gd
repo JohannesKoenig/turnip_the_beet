@@ -2,6 +2,7 @@ class_name InventorySlot extends Control
 
 @onready var item_texture = $ItemTexture
 @onready var texture_rect = $TextureRect
+@onready var selected_texture_rect = $SelectedTextureRect
 @onready var inventory: Inventory = Model.inventory
 var x: int
 var y: int
@@ -18,17 +19,29 @@ signal clicked
 func _ready():
 	inventory.inventory_changed.connect(_update_slot)
 	selected_changed.connect(_on_selected_changed)
+	inventory.selected_item_changed.connect(_on_equipped_changed)
 	_update_slot()
 	_on_selected_changed()
+	_on_equipped_changed(inventory.selected_item)
+	
+func _on_equipped_changed(selected: Vector2i):
+	if selected.x == x and selected.y == y:
+		selected_texture_rect.visible = true
+	else:
+		selected_texture_rect.visible = false
 
 
 func _update_slot():
+	var new_item = null
 	if inventory.has_value(x, y):
-		item = inventory.get_value(x, y)
-		item_texture.texture = item.icon
+		new_item = inventory.get_value(x, y)
+		item_texture.texture = new_item.icon
 	else:
-		item = null
+		new_item = null
 		item_texture.texture = null
+	if item != new_item and inventory.selected_item == Vector2i(x, y):
+		inventory.deselect_item(x, y)
+	item = new_item
 	
 func _make_custom_tooltip(for_text):
 	var label = Label.new()
@@ -52,6 +65,14 @@ func _process(delta):
 				Clipboard.source_pos = Vector2i(-1, -1)
 		
 		Clipboard.dragging = false
+	
+	if Input.is_action_just_pressed("equip"):
+		if _mouse_inside:
+			if item != null:
+				if inventory.selected_item != Vector2i(x, y):
+					inventory.select_item(x, y)
+				else:
+					inventory.deselect_item(x, y)
 
 func _on_mouse_entered():
 	_mouse_inside = true
@@ -62,6 +83,6 @@ func _on_mouse_exited():
 
 func _on_selected_changed():
 	if selected:
-		texture_rect.modulate = Color.GRAY
+		texture_rect.modulate = Color.WEB_GRAY
 	else:
 		texture_rect.modulate = Color.BLACK

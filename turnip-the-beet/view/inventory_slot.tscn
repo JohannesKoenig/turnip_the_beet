@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://view/inventory_slot.gd" id="1_s6ofk"]
 
 [sub_resource type="Gradient" id="Gradient_pj6qe"]
-offsets = PackedFloat32Array(0.831169, 1)
-colors = PackedColorArray(1, 1, 1, 0.0705882, 1, 1, 1, 0.168627)
+offsets = PackedFloat32Array(0.636364, 0.756494, 0.866883)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.243137, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_76yg2"]
 gradient = SubResource("Gradient_pj6qe")
@@ -26,6 +26,15 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_s6ofk")
+
+[node name="SelectedTextureRect" type="TextureRect" parent="."]
+modulate = Color(0.303999, 0.957025, 0, 1)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+tooltip_text = "label"
+texture = SubResource("GradientTexture2D_76yg2")
+expand_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="."]
 modulate = Color(0, 0, 0, 1)

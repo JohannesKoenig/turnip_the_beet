@@ -1,7 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://c4xn85aug73yx"]
+[gd_scene load_steps=23 format=3 uid="uid://c4xn85aug73yx"]
 
 [ext_resource type="Script" path="res://view/character.gd" id="1_6c6xe"]
 [ext_resource type="Texture2D" uid="uid://dhyc1fqbfdhgw" path="res://assets/type_2_example_figure.png" id="2_nlvc3"]
+[ext_resource type="Script" path="res://view/target_pivot.gd" id="3_3ppon"]
 
 [sub_resource type="Gradient" id="Gradient_k12gu"]
 offsets = PackedFloat32Array(0.36039, 1)
@@ -126,6 +127,9 @@ animations = [{
 radius = 7.0
 height = 22.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_xn114"]
+radius = 1.0
+
 [node name="Character" type="CharacterBody2D"]
 y_sort_enabled = true
 motion_mode = 1
@@ -143,3 +147,14 @@ offset = Vector2(0, -16)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -11)
 shape = SubResource("CapsuleShape2D_h6rpv")
+
+[node name="TargetPivot" type="Node2D" parent="."]
+script = ExtResource("3_3ppon")
+
+[node name="Area2D" type="Area2D" parent="TargetPivot"]
+collision_layer = 16
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TargetPivot/Area2D"]
+position = Vector2(15, 0)
+shape = SubResource("CircleShape2D_xn114")

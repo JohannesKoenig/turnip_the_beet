@@ -42,15 +42,6 @@ func _ready():
 			store_slot.y = y
 			grid_container.add_child(store_slot)
 
-func _process(delta):
-	if Input.is_action_just_pressed("Store"):
-		match store_state:
-			StoreState.CLOSED:
-				store_state = StoreState.OPEN
-			StoreState.OPEN:
-				store_state = StoreState.CLOSED
-			_:
-				store_state = StoreState.CLOSED
 
 func _process_state(state: StoreState):
 	match store_state:

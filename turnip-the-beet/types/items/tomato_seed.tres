@@ -10,3 +10,4 @@ name = "Tomato seeds"
 price = 1
 season = 1
 description = "The seeds of a tomato"
+species = 1

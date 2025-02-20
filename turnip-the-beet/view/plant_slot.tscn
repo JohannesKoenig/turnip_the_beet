@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://da880hshpodhc"]
+[gd_scene load_steps=5 format=3 uid="uid://da880hshpodhc"]
 
 [ext_resource type="Script" path="res://view/plant_slot.gd" id="1_7xscl"]
 
@@ -14,9 +14,22 @@ fill = 2
 fill_from = Vector2(0.502294, 0.493119)
 metadata/_snap_enabled = true
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l66mk"]
+size = Vector2(8, 8)
+
 [node name="PlantSlot" type="Node2D"]
 script = ExtResource("1_7xscl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -1
 texture = SubResource("GradientTexture2D_mxvvr")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_l66mk")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
