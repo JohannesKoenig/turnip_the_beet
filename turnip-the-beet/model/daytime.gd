@@ -39,6 +39,12 @@ func update():
 	hour = int(floor(delta / _hour_length))% 24 + 1
 	day = int(floor(delta / _day_length))% 30 + 1
 	
+func is_night() -> bool:
+	return hour >= 20 or hour < 6
+
+func is_day() -> bool:
+	return !is_night()
+		
 
 
 static func constructor():

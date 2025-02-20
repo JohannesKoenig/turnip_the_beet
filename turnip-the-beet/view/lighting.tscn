@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dogweyj3uxlwb"]
+
+[ext_resource type="Script" path="res://view/lighting.gd" id="1_72kto"]
+
+[sub_resource type="Environment" id="Environment_grv2g"]
+background_mode = 3
+tonemap_mode = 2
+glow_intensity = 4.38
+
+[node name="Lighting" type="CanvasModulate"]
+script = ExtResource("1_72kto")
+night_color = Color(0.000618095, 0.133905, 0.536766, 1)
+day_color = Color(1, 0.882427, 0.752599, 1)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_grv2g")
