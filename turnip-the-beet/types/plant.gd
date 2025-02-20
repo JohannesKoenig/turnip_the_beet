@@ -24,6 +24,10 @@ enum Species {
 @export var ripe_texture: Texture
 @export var growing_state: GrowingStateType
 
+@export var seed_to_small: int = 1
+@export var small_to_large: int = 1
+@export var large_to_ripe: int = 1
+
 func get_texture()-> Texture:
 	match growing_state:
 		GrowingStateType.SEED: 

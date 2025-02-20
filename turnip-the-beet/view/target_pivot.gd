@@ -11,7 +11,6 @@ func _process(delta):
 	var mouse_position = get_global_mouse_position()
 	var distance_to_pivot = mouse_position - global_position
 	var length = distance_to_pivot.length()
-	print(max_distance)
 	var target_pos_area_2d = Vector2.RIGHT * min(
 		max_distance,
 		length

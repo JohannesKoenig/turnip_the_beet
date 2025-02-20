@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://brt2wbo7wrr6i"]
+
+[ext_resource type="Script" path="res://view/pedestrian_entity.gd" id="1_88s30"]
+[ext_resource type="Texture2D" uid="uid://bfenvt5a8msqw" path="res://assets/icons/tomato_icon.png" id="2_cd6qk"]
+
+[node name="PedestrianEntity" type="Node2D"]
+script = ExtResource("1_88s30")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_cd6qk")

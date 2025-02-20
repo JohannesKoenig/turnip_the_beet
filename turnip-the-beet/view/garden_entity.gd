@@ -11,6 +11,8 @@ func _ready():
 	for y in range(garden.data._y_max):
 		for x in range(garden.data._x_max): 
 			var plant_slot: PlantSlot = plant_slot_packed_scene.instantiate()
+			plant_slot.x = x
+			plant_slot.y = y
 			plant_slot.plant = garden.get_value(x, y)
 			add_child(plant_slot)
 			plant_slot.position=Vector2(plant_slot.width * x, plant_slot.height * y)
