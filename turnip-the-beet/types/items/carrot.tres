@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://dmvk1o57g5ile"]
+
+[ext_resource type="Script" path="res://types/item.gd" id="1_lp0q2"]
+[ext_resource type="Texture2D" uid="uid://cgoxwya4yl2b6" path="res://assets/icons/carrot_inventory.png" id="1_rlq7s"]
+
+[resource]
+script = ExtResource("1_lp0q2")
+icon = ExtResource("1_rlq7s")
+name = ""
+price = 5
+season = 1
+description = "second freshest stickling in th world"
