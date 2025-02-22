@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://w5lovnm1gjei"]
+
+[ext_resource type="Texture2D" uid="uid://cgoxwya4yl2b6" path="res://assets/icons/carrot_inventory.png" id="1_wt62l"]
+[ext_resource type="Script" path="res://types/item.gd" id="2_hb1ab"]
+
+[resource]
+script = ExtResource("2_hb1ab")
+icon = ExtResource("1_wt62l")
+name = "Carrot seeds"
+price = 1
+season = 0
+description = "The seeds of a carrot"
+species = 1
+item_type = 0

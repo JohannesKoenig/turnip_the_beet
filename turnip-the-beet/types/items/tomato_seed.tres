@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://ccqy44k0hgvsr"]
+
+[ext_resource type="Script" path="res://types/item.gd" id="1_53suj"]
+[ext_resource type="Texture2D" uid="uid://du7lvoa1w20xh" path="res://assets/icons/tomato_seeds_icon.png" id="1_lchbc"]
+
+[resource]
+script = ExtResource("1_53suj")
+icon = ExtResource("1_lchbc")
+name = "Tomato seeds"
+price = 1
+season = 1
+description = "The seeds of a tomato"
+species = 1
