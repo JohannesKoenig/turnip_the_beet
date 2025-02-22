@@ -6,6 +6,7 @@ import json
 """
 Midi am besten zischen c3 und c4
 """
+BPM = 100
 
 
 def midi_to_platforms(midi_file):
@@ -18,6 +19,8 @@ def midi_to_platforms(midi_file):
     print(ticks_per_beat)
     time_offset = 0  # Keep track of elapsed time
     scale = 10
+    beat_per_second = BPM / 60
+    sec_per_beat = 1 / beat_per_second
     # Process each track in the MIDI file
     for i, track in enumerate(midi.tracks):
         print(f"Processing track {i}: {track.name}")
@@ -38,12 +41,12 @@ def midi_to_platforms(midi_file):
                 note_pitch = msg.note
                 if note_pitch in note_start_times:
                     # Calculate duration between note_on and note_off
-                    note_start = note_start_times.pop(note_pitch)
+                    note_start = int(note_start_times.pop(note_pitch))
                     note_duration = time_offset - note_start
 
                     # Calculate platform properties
                     platform = {
-                        "x": (note_start / ticks_per_beat) * scale,  # Scale start time to x position
+                        "x": int((note_start / ticks_per_beat) * scale),  # Scale start time to x position
                         "y": 127 - note_pitch,             # Height inversely related to pitch
                         "w": (note_duration / ticks_per_beat) * scale  # Scale duration to width
                     }
@@ -52,8 +55,8 @@ def midi_to_platforms(midi_file):
     
 
 # Example usage
-midi_file = "melodie-2.mid"
-length_file = "melodie-2.mid"  # Replace with your MIDI file path
+midi_file = "melody_1.mid"
+length_file = "melody_1.mid"  # Replace with your MIDI file path
 
 output_file = f"{Path(midi_file).name}.json"
 plts = midi_to_platforms(midi_file)
