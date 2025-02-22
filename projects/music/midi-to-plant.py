@@ -52,10 +52,10 @@ def midi_to_platforms(midi_file):
     
 
 # Example usage
-midi_file = "melodie.mid"
-length_file = "melodie.mid"  # Replace with your MIDI file path
+midi_file = "melodie-2.mid"
+length_file = "melodie-2.mid"  # Replace with your MIDI file path
 
-output_file = f"levels/{Path(midi_file).name}.json"
+output_file = f"{Path(midi_file).name}.json"
 plts = midi_to_platforms(midi_file)
 length = midi_to_platforms(length_file)
 out_data = {
