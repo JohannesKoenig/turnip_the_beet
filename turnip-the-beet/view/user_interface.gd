@@ -18,6 +18,7 @@ var open_ui: OpenUiType:
 signal open_ui_changed(type: OpenUiType)
 
 func _ready():
+	visible = true
 	open_ui_changed.connect(_on_open_ui_changed)
 
 func _process(delta):

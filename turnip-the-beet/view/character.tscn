@@ -123,9 +123,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h6rpv"]
-radius = 7.0
-height = 22.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h1s1s"]
+size = Vector2(10, 2)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xn114"]
 radius = 1.0
@@ -145,8 +144,8 @@ autoplay = "default"
 offset = Vector2(0, -16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -11)
-shape = SubResource("CapsuleShape2D_h6rpv")
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_h1s1s")
 
 [node name="TargetPivot" type="Node2D" parent="."]
 script = ExtResource("3_3ppon")
