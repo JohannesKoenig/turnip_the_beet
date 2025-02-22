@@ -5,18 +5,21 @@ var target_position: Vector2
 var current_action: int
 var actions: Array[Action]
 var max_speed: float = 1
-var _timer: Timer
 var wait_until: float
+@onready var gpu_particles_2d = $GPUParticles2D
+var listening: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	actions = pedestrian.actions
 	current_action = 0
-	_timer = Timer.new()
-	add_child(_timer)
-
+	gpu_particles_2d.emitting = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if listening:
+		gpu_particles_2d.emitting = true
+	else:
+		gpu_particles_2d.emitting = false
 	if current_action < len(actions):
 		var action = actions[current_action]
 		action.process(self)
@@ -43,3 +46,6 @@ func wait(time: float):
 
 func is_waiting() -> bool:
 	return Time.get_unix_time_from_system() < wait_until
+
+func listen(value: bool):
+	listening = value

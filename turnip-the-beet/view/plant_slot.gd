@@ -11,9 +11,11 @@ var plant_entity_packed_scene = preload("res://view/plant_entity.tscn")
 var player_target_entered: bool = false
 var inventory: Inventory
 var plant_entity: PlantEntity
+var garden: Garden
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	inventory = Model.inventory
+	garden = Model.garden
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -30,13 +32,19 @@ func _process(delta):
 				selected_item_coords.y
 			)
 			if selected_item != null:
-				if selected_item.item_type == Item.Type.SEED:
-					var plant = Plant.constructor(selected_item.species)
-					set_plant(plant)
-					inventory.delete_value(
-						selected_item_coords.x,
-						selected_item_coords.y
-					)
+				if not garden.has_value(selected_item_coords.x, selected_item_coords.y):
+					if selected_item.item_type == Item.Type.SEED:
+						var plant = Plant.constructor(selected_item.species)
+						set_plant(plant)
+						inventory.delete_value(
+							selected_item_coords.x,
+							selected_item_coords.y
+						)
+						garden.set_value(
+							selected_item_coords.x,
+							selected_item_coords.y,
+							plant
+						)
 
 func _has_seeds_equiped() -> bool:
 	var selected_item_coords: Vector2i = inventory.selected_item

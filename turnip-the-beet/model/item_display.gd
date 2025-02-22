@@ -24,6 +24,13 @@ func has_space() -> bool:
 			if not has_value(x, y):
 				return true
 	return false
+	
+func is_empty() -> bool:
+	for y in data._y_max:
+		for x in data._x_max:
+			if has_value(x, y):
+				return false
+	return true
 
 func delete_value(x: int, y: int):
 	data.set_value(null, Vector2i(x, y))

@@ -4,12 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://dhyc1fqbfdhgw" path="res://assets/type_2_example_figure.png" id="2_nlvc3"]
 [ext_resource type="Script" path="res://view/target_pivot.gd" id="3_3ppon"]
 
-[sub_resource type="Gradient" id="Gradient_k12gu"]
+[sub_resource type="Gradient" id="Gradient_vy4un"]
 offsets = PackedFloat32Array(0.36039, 1)
 colors = PackedColorArray(0, 0, 0, 0.380392, 0, 0, 0, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_1gm7i"]
-gradient = SubResource("Gradient_k12gu")
+gradient = SubResource("Gradient_vy4un")
 width = 20
 height = 8
 fill = 1

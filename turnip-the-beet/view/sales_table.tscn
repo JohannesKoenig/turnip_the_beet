@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://dvbhhalicngqa"]
+
+[ext_resource type="Texture2D" uid="uid://pjf1fluqjrak" path="res://assets/table.png" id="1_gi5um"]
+[ext_resource type="Script" path="res://view/sales_table.gd" id="1_mrhyv"]
+
+[sub_resource type="Gradient" id="Gradient_tb4pm"]
+offsets = PackedFloat32Array(0.36039, 1)
+colors = PackedColorArray(0, 0, 0, 0.380392, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_p1w0l"]
+gradient = SubResource("Gradient_tb4pm")
+width = 40
+height = 16
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.4)
+metadata/_snap_enabled = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_akrxq"]
+size = Vector2(32, 11)
+
+[node name="SalesTable" type="Node2D"]
+script = ExtResource("1_mrhyv")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, -2)
+texture = SubResource("GradientTexture2D_p1w0l")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -22)
+texture = ExtResource("1_gi5um")
+
+[node name="product_1" type="Sprite2D" parent="."]
+position = Vector2(-12, -11)
+scale = Vector2(0.3, 0.3)
+
+[node name="product_2" type="Sprite2D" parent="."]
+position = Vector2(-4, -11)
+scale = Vector2(0.3, 0.3)
+
+[node name="product_3" type="Sprite2D" parent="."]
+position = Vector2(4, -11)
+scale = Vector2(0.3, 0.3)
+
+[node name="product_4" type="Sprite2D" parent="."]
+position = Vector2(12, -11)
+scale = Vector2(0.3, 0.3)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -3.5)
+shape = SubResource("RectangleShape2D_akrxq")

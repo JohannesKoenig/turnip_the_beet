@@ -17,14 +17,14 @@ func delete_value(x: int, y: int):
 func has_value(x: int, y: int) -> bool:
 	return data.has_value(Vector2i(x, y))
 	
+func is_empty() -> bool:
+	for y in data._y_max:
+		for x in data._x_max:
+			if has_value(x, y):
+				return false
+	return true
 
 static func constructor() -> Garden:
 	var garden = Garden.new()
 	garden.data = Array2D.constructor(5,3)
-	var tomato = load("res://types/plants/tomato_plant.tres")
-	for y in range(3):
-		for x in range(5):
-			var tomate_clone: Plant = tomato.duplicate(true)
-			tomate_clone.growing_state = randi_range(0, 3)
-			garden.set_value(x, y, tomate_clone)
 	return garden
