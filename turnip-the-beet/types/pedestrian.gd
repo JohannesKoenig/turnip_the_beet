@@ -13,12 +13,18 @@ static func generate_actions(
 	buy_position: Vector2,
 	listen_position: Vector2,
 	despawn_position: Vector2,
+	garden: Garden,
+	item_display: ItemDisplay
 ) -> Array[Action]:
 	var actions: Array[Action] = []
 	actions.append(LifeCycleAction.constructor(spawn_position))
 	var buy = randf() > 0.5
 	var listen = randf() > 0.5
 	var buy_first = randf() > 0.5
+	print(listen, " ", not garden.is_empty())
+	print(buy, " ", not item_display.is_empty())
+	listen = listen and not garden.is_empty()
+	buy = buy and not item_display.is_empty()
 	if buy_first:
 		if buy: 
 			actions.append(BuyAction.constructor(buy_position))

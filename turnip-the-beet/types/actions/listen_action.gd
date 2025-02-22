@@ -21,7 +21,9 @@ func process(pedestrian_entity: PedestrianEntity):
 		return
 	if !pedestrian_entity.is_waiting() and !_waiting:
 		_waiting = true
+		pedestrian_entity.listen(true)
 		pedestrian_entity.wait(3)
 		return
 	if !pedestrian_entity.is_waiting() and _waiting:
 		_finished_waiting = true
+		pedestrian_entity.listen(false)

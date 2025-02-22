@@ -33,7 +33,20 @@ func _on_hour_changed(hour: int):
 		light_alpha = 1.0
 
 func _spawn_pedestrian():
-	var actions = Pedestrian.generate_actions(spawn_marker.position, buy_marker.position, listen_marker.position, despawn_marker.position)
+	var from_left = randf() > 0.5
+	var spawn = spawn_marker.position
+	var despawn = despawn_marker.position
+	if not from_left:
+		spawn = despawn_marker.position
+		despawn = spawn_marker.position
+	var actions = Pedestrian.generate_actions(
+		spawn, 
+		buy_marker.position + Vector2(randf_range(-3, 3), randf_range(-1, 1)), 
+		listen_marker.position + Vector2(randf_range(0, 20), randf_range(-1, 1)), 
+		despawn,
+		Model.garden,
+		Model.item_display
+	)
 	var pedestrian = Pedestrian.constructor(actions)
 	var pedestrian_entity: PedestrianEntity = pedestrian_entity_packed_scene.instantiate()
 	pedestrian_entity.position = spawn_marker.position
