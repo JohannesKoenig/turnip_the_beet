@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://dybqtafs2i2du"]
+[gd_scene load_steps=17 format=4 uid="uid://dybqtafs2i2du"]
 
 [ext_resource type="PackedScene" uid="uid://c0boh4182n1gv" path="res://view/tile_map_layers/dirt_tile_map_layer.tscn" id="1_5ws0u"]
 [ext_resource type="Script" path="res://view/game_scene.gd" id="1_udia7"]
@@ -11,18 +11,13 @@
 [ext_resource type="PackedScene" uid="uid://dogweyj3uxlwb" path="res://view/lighting.tscn" id="8_4u8b3"]
 [ext_resource type="Texture2D" uid="uid://wwysp7vcas5a" path="res://assets/house.png" id="8_t30sx"]
 [ext_resource type="Texture2D" uid="uid://sk27pdkxi1yd" path="res://assets/wall.png" id="10_44wvu"]
+[ext_resource type="PackedScene" uid="uid://dvbhhalicngqa" path="res://view/sales_table.tscn" id="12_y024f"]
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_7pthu"]
-polygon = PackedVector2Array(-136, -3, -136, -4, -139, -4, -141, -6, -141, -5, -139, -3)
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_4l0fq"]
-polygon = PackedVector2Array(-80, -3, -80, -4, -77, -4, -75, -6, -75, -5, -77, -3)
-
-[sub_resource type="Gradient" id="Gradient_oml8d"]
+[sub_resource type="Gradient" id="Gradient_4d6nb"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_uy041"]
-gradient = SubResource("Gradient_oml8d")
+gradient = SubResource("Gradient_4d6nb")
 width = 128
 height = 128
 fill = 1
@@ -76,45 +71,36 @@ tile_map_data = PackedByteArray("AAAwABUAAAADAAQAAAAwABQAAAADAAQAAAAwABMAAAADAAQ
 [node name="Lights" type="Node2D" parent="."]
 position = Vector2(224, 40)
 
-[node name="LightOccluder2D2" type="LightOccluder2D" parent="Lights"]
-occluder = SubResource("OccluderPolygon2D_7pthu")
-
-[node name="LightOccluder2D3" type="LightOccluder2D" parent="Lights"]
-occluder = SubResource("OccluderPolygon2D_4l0fq")
-
 [node name="PointLight2D" type="PointLight2D" parent="Lights"]
 z_index = 3
 position = Vector2(-108, -29)
 color = Color(0.764992, 0.440297, 1.34766e-06, 1)
+range_item_cull_mask = 3
 shadow_enabled = true
+shadow_item_cull_mask = 2
 texture = SubResource("GradientTexture2D_uy041")
-
-[node name="LightOccluder2D4" type="LightOccluder2D" parent="Lights"]
-position = Vector2(216, 0)
-occluder = SubResource("OccluderPolygon2D_7pthu")
-
-[node name="LightOccluder2D5" type="LightOccluder2D" parent="Lights"]
-position = Vector2(216, 0)
-occluder = SubResource("OccluderPolygon2D_4l0fq")
 
 [node name="PointLight2D2" type="PointLight2D" parent="Lights"]
 z_index = 3
-position = Vector2(108, -29)
+position = Vector2(108, -33)
 color = Color(0.764992, 0.440297, 1.34766e-06, 1)
+range_item_cull_mask = 3
 shadow_enabled = true
+shadow_item_cull_mask = 2
 texture = SubResource("GradientTexture2D_uy041")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 y_sort_enabled = true
-position = Vector2(224, 40)
+position = Vector2(224, 36)
 texture = ExtResource("5_hdbuy")
 offset = Vector2(0, 50)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+light_mask = 2
 y_sort_enabled = true
-position = Vector2(224, 40)
+position = Vector2(224, 36)
 texture = ExtResource("8_t30sx")
-offset = Vector2(0, 50)
+offset = Vector2(0, 56)
 
 [node name="UserInterface" parent="." instance=ExtResource("3_2hwd5")]
 visible = false
@@ -145,3 +131,12 @@ position = Vector2(115.595, 180)
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAADAAMAAAADAAAAAAADAAQAAAADAAAAAAADAAUAAAADAAAAAAADAAYAAAADAAAAAAADAAcAAAADAAAAAAADAAgAAAADAAAAAAADAAkAAAADAAAAAAADAAoAAAACAAAAAAAYAAMAAAAAAAEAAAAYAAQAAAAAAAEAAAAYAAUAAAAAAAEAAAAYAAYAAAAAAAEAAAAYAAcAAAAAAAEAAAAYAAgAAAAAAAEAAAAYAAkAAAAAAAEAAAAYAAoAAAABAAAAAAAEAAoAAAAAAAAAAAAFAAoAAAAAAAAAAAAGAAoAAAAAAAAAAAAHAAoAAAAAAAAAAAAIAAoAAAAAAAAAAAAJAAoAAAAAAAAAAAAKAAoAAAAAAAAAAAALAAoAAAAAAAAAAAAMAAoAAAAAAAAAAAAPAAoAAAAAAAAAAAAQAAoAAAAAAAAAAAARAAoAAAAAAAAAAAASAAoAAAAAAAAAAAATAAoAAAAAAAAAAAAUAAoAAAAAAAAAAAAVAAoAAAAAAAAAAAAWAAoAAAAAAAAAAAAXAAoAAAAAAAAAAAADAAIAAAADAAAAAAAYAAIAAAAAAAEAAAA=")
 tile_set = SubResource("TileSet_i4tah")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(224, 40)
+polygon = PackedVector2Array(-176, 4, -145, 4, -138, 11, -78, 11, -71, 4, -28, 4, -28, 9, -23, 9, -23, -5, 23, -5, 23, 9, 28, 9, 28, 4, 71, 4, 78, 11, 138, 11, 145, 4, 160, 4, 160, 9, 176, 9, 176, -72, -176, -72)
+
+[node name="SalesTable" parent="." instance=ExtResource("12_y024f")]
+position = Vector2(345, 183)
