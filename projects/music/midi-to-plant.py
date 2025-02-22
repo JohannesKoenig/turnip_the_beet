@@ -43,14 +43,18 @@ def midi_to_platforms(midi_file):
                     # Calculate duration between note_on and note_off
                     note_start = int(note_start_times.pop(note_pitch))
                     note_duration = time_offset - note_start
+                    note_on_tick = int((note_start / ticks_per_beat) * scale)
+                    note_length = int((note_duration / ticks_per_beat) * scale)
 
                     # Calculate platform properties
-                    platform = {
-                        "x": int((note_start / ticks_per_beat) * scale),  # Scale start time to x position
-                        "y": 127 - note_pitch,             # Height inversely related to pitch
-                        "w": (note_duration / ticks_per_beat) * scale  # Scale duration to width
-                    }
-                    platforms.append(platform)
+                    if note_length > 0:
+                        platform = {
+                            "tick": note_on_tick % 16,  # Scale start time to x position
+                            "note_pitch": 127 - note_pitch,             # Height inversely related to pitch
+                            "note_length": note_length,  # Scale duration to width
+                            "tact": int(note_on_tick / 16)
+                        }
+                        platforms.append(platform)
     return platforms
     
 
@@ -62,7 +66,7 @@ output_file = f"{Path(midi_file).name}.json"
 plts = midi_to_platforms(midi_file)
 length = midi_to_platforms(length_file)
 out_data = {
-    "total_length": length[0]["w"],
+    "total_length": length[0]["note_length"],
     "platforms": plts
 }
 # Save platforms as a JSON file
