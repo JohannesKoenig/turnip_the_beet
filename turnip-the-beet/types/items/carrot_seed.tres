@@ -10,5 +10,5 @@ name = "Carrot seeds"
 price = 1
 season = 0
 description = "The seeds of a carrot"
-species = 1
+species = 2
 item_type = 0

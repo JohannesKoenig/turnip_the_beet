@@ -48,6 +48,10 @@ static func constructor(species: Species) -> Plant:
 			var plant = load("res://types/plants/tomato_plant.tres").duplicate()
 			plant.melodie = Melodie.load_melodie(plant.midi_file)
 			return plant
+		Species.CARROT:
+			var plant = load("res://types/plants/carrot_plant.tres").duplicate()
+			plant.melodie = Melodie.load_melodie(plant.midi_file)
+			return plant
 		_:
 			return null
 			

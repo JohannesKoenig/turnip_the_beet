@@ -6,7 +6,9 @@
 [resource]
 script = ExtResource("1_lp0q2")
 icon = ExtResource("1_rlq7s")
-name = ""
+name = "Carrot"
 price = 5
-season = 1
+season = 0
 description = "second freshest stickling in th world"
+species = 2
+item_type = 1

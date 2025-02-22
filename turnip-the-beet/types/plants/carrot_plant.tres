@@ -1,12 +1,26 @@
-[gd_resource type="Resource" script_class="Plant" load_steps=2 format=3 uid="uid://dsxl7eqiutvbv"]
+[gd_resource type="Resource" script_class="Plant" load_steps=7 format=3 uid="uid://dsxl7eqiutvbv"]
 
+[ext_resource type="Resource" uid="uid://dmvk1o57g5ile" path="res://types/items/carrot.tres" id="1_2w7lw"]
 [ext_resource type="Script" path="res://types/plant.gd" id="1_71pbx"]
+[ext_resource type="Texture2D" uid="uid://chedy45ardt4i" path="res://assets/plants/seed/tomato_seeds.png" id="2_ysd1p"]
+[ext_resource type="Resource" uid="uid://w5lovnm1gjei" path="res://types/items/carrot_seed.tres" id="3_37qll"]
+[ext_resource type="Script" path="res://synthesizer/sound_waves/sine_wave.gd" id="5_1r8x7"]
+
+[sub_resource type="Resource" id="Resource_pwinn"]
+script = ExtResource("5_1r8x7")
 
 [resource]
 script = ExtResource("1_71pbx")
-name = ""
+product = ExtResource("1_2w7lw")
+seed = ExtResource("3_37qll")
+name = "Carrot"
 season = 0
-midi_file = ""
+midi_file = "res://assets/music/garden jam midi datei.midi_4.json"
+sound_wave = SubResource("Resource_pwinn")
+seed_texture = ExtResource("2_ysd1p")
+small_texture = ExtResource("2_ysd1p")
+large_texture = ExtResource("2_ysd1p")
+ripe_texture = ExtResource("2_ysd1p")
 growing_state = 0
 seed_to_small = 1
 small_to_large = 1
