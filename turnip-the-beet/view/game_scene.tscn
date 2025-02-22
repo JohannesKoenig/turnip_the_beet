@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dogweyj3uxlwb" path="res://view/lighting.tscn" id="8_4u8b3"]
 [ext_resource type="Texture2D" uid="uid://wwysp7vcas5a" path="res://assets/house.png" id="8_t30sx"]
 [ext_resource type="Texture2D" uid="uid://sk27pdkxi1yd" path="res://assets/wall.png" id="10_44wvu"]
-[ext_resource type="PackedScene" uid="uid://dvbhhalicngqa" path="res://view/sales_table.tscn" id="12_y024f"]
+[ext_resource type="PackedScene" path="res://view/sales_table.tscn" id="12_y024f"]
 
 [sub_resource type="Gradient" id="Gradient_4d6nb"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)

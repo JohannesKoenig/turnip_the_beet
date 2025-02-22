@@ -6,4 +6,8 @@
 script = ExtResource("1_71pbx")
 name = ""
 season = 0
+midi_file = ""
 growing_state = 0
+seed_to_small = 1
+small_to_large = 1
+large_to_ripe = 1

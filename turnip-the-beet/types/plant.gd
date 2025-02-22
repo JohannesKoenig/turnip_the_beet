@@ -17,8 +17,9 @@ enum Species {
 @export var seed: Item
 @export var name: String
 @export var season: Daytime.Season
-@export var melodie: Melodie
+@export var midi_file: String
 @export var sound_wave: SoundWave
+var melodie: Melodie
 @export var seed_texture: Texture
 @export var small_texture: Texture
 @export var large_texture: Texture
@@ -45,6 +46,7 @@ static func constructor(species: Species) -> Plant:
 	match species:
 		Species.TOMATO:
 			var plant = load("res://types/plants/tomato_plant.tres").duplicate()
+			plant.melodie = Melodie.load_melodie(plant.midi_file)
 			return plant
 		_:
 			return null

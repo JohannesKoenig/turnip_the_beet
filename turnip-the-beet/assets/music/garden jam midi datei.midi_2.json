@@ -1,0 +1,490 @@
+{
+    "platforms": [
+        {
+            "tick": 0,
+            "note_pitch": 72,
+            "note_length": 1,
+            "tact": 2
+        },
+        {
+            "tick": 3,
+            "note_pitch": 70,
+            "note_length": 2,
+            "tact": 2
+        },
+        {
+            "tick": 4,
+            "note_pitch": 72,
+            "note_length": 10,
+            "tact": 2
+        },
+        {
+            "tick": 14,
+            "note_pitch": 74,
+            "note_length": 1,
+            "tact": 2
+        },
+        {
+            "tick": 0,
+            "note_pitch": 75,
+            "note_length": 1,
+            "tact": 3
+        },
+        {
+            "tick": 2,
+            "note_pitch": 77,
+            "note_length": 1,
+            "tact": 3
+        },
+        {
+            "tick": 4,
+            "note_pitch": 79,
+            "note_length": 1,
+            "tact": 3
+        },
+        {
+            "tick": 6,
+            "note_pitch": 75,
+            "note_length": 1,
+            "tact": 3
+        },
+        {
+            "tick": 8,
+            "note_pitch": 82,
+            "note_length": 3,
+            "tact": 3
+        },
+        {
+            "tick": 12,
+            "note_pitch": 84,
+            "note_length": 4,
+            "tact": 3
+        },
+        {
+            "tick": 6,
+            "note_pitch": 84,
+            "note_length": 2,
+            "tact": 4
+        },
+        {
+            "tick": 8,
+            "note_pitch": 82,
+            "note_length": 2,
+            "tact": 4
+        },
+        {
+            "tick": 10,
+            "note_pitch": 79,
+            "note_length": 9,
+            "tact": 4
+        },
+        {
+            "tick": 6,
+            "note_pitch": 79,
+            "note_length": 2,
+            "tact": 5
+        },
+        {
+            "tick": 8,
+            "note_pitch": 77,
+            "note_length": 2,
+            "tact": 5
+        },
+        {
+            "tick": 10,
+            "note_pitch": 75,
+            "note_length": 9,
+            "tact": 5
+        },
+        {
+            "tick": 4,
+            "note_pitch": 72,
+            "note_length": 16,
+            "tact": 6
+        },
+        {
+            "tick": 6,
+            "note_pitch": 74,
+            "note_length": 2,
+            "tact": 7
+        },
+        {
+            "tick": 8,
+            "note_pitch": 75,
+            "note_length": 1,
+            "tact": 7
+        },
+        {
+            "tick": 11,
+            "note_pitch": 77,
+            "note_length": 1,
+            "tact": 7
+        },
+        {
+            "tick": 12,
+            "note_pitch": 79,
+            "note_length": 2,
+            "tact": 7
+        },
+        {
+            "tick": 0,
+            "note_pitch": 82,
+            "note_length": 2,
+            "tact": 8
+        },
+        {
+            "tick": 4,
+            "note_pitch": 79,
+            "note_length": 4,
+            "tact": 8
+        },
+        {
+            "tick": 10,
+            "note_pitch": 84,
+            "note_length": 1,
+            "tact": 8
+        },
+        {
+            "tick": 12,
+            "note_pitch": 82,
+            "note_length": 1,
+            "tact": 8
+        },
+        {
+            "tick": 14,
+            "note_pitch": 84,
+            "note_length": 10,
+            "tact": 8
+        },
+        {
+            "tick": 10,
+            "note_pitch": 84,
+            "note_length": 1,
+            "tact": 9
+        },
+        {
+            "tick": 12,
+            "note_pitch": 82,
+            "note_length": 1,
+            "tact": 9
+        },
+        {
+            "tick": 14,
+            "note_pitch": 79,
+            "note_length": 9,
+            "tact": 9
+        },
+        {
+            "tick": 10,
+            "note_pitch": 77,
+            "note_length": 1,
+            "tact": 10
+        },
+        {
+            "tick": 12,
+            "note_pitch": 75,
+            "note_length": 1,
+            "tact": 10
+        },
+        {
+            "tick": 14,
+            "note_pitch": 72,
+            "note_length": 11,
+            "tact": 10
+        },
+        {
+            "tick": 10,
+            "note_pitch": 70,
+            "note_length": 1,
+            "tact": 11
+        },
+        {
+            "tick": 12,
+            "note_pitch": 67,
+            "note_length": 1,
+            "tact": 11
+        },
+        {
+            "tick": 14,
+            "note_pitch": 70,
+            "note_length": 1,
+            "tact": 11
+        },
+        {
+            "tick": 0,
+            "note_pitch": 67,
+            "note_length": 2,
+            "tact": 12
+        },
+        {
+            "tick": 4,
+            "note_pitch": 63,
+            "note_length": 21,
+            "tact": 12
+        },
+        {
+            "tick": 10,
+            "note_pitch": 65,
+            "note_length": 1,
+            "tact": 13
+        },
+        {
+            "tick": 12,
+            "note_pitch": 67,
+            "note_length": 1,
+            "tact": 13
+        },
+        {
+            "tick": 14,
+            "note_pitch": 70,
+            "note_length": 4,
+            "tact": 13
+        },
+        {
+            "tick": 4,
+            "note_pitch": 72,
+            "note_length": 20,
+            "tact": 14
+        },
+        {
+            "tick": 10,
+            "note_pitch": 77,
+            "note_length": 1,
+            "tact": 15
+        },
+        {
+            "tick": 12,
+            "note_pitch": 75,
+            "note_length": 1,
+            "tact": 15
+        },
+        {
+            "tick": 14,
+            "note_pitch": 72,
+            "note_length": 4,
+            "tact": 15
+        },
+        {
+            "tick": 4,
+            "note_pitch": 79,
+            "note_length": 21,
+            "tact": 16
+        },
+        {
+            "tick": 10,
+            "note_pitch": 77,
+            "note_length": 1,
+            "tact": 17
+        },
+        {
+            "tick": 12,
+            "note_pitch": 77,
+            "note_length": 1,
+            "tact": 17
+        },
+        {
+            "tick": 14,
+            "note_pitch": 79,
+            "note_length": 1,
+            "tact": 17
+        },
+        {
+            "tick": 0,
+            "note_pitch": 79,
+            "note_length": 1,
+            "tact": 18
+        },
+        {
+            "tick": 2,
+            "note_pitch": 82,
+            "note_length": 1,
+            "tact": 18
+        },
+        {
+            "tick": 4,
+            "note_pitch": 84,
+            "note_length": 9,
+            "tact": 18
+        },
+        {
+            "tick": 14,
+            "note_pitch": 84,
+            "note_length": 1,
+            "tact": 18
+        },
+        {
+            "tick": 0,
+            "note_pitch": 82,
+            "note_length": 1,
+            "tact": 19
+        },
+        {
+            "tick": 2,
+            "note_pitch": 79,
+            "note_length": 1,
+            "tact": 19
+        },
+        {
+            "tick": 4,
+            "note_pitch": 79,
+            "note_length": 5,
+            "tact": 19
+        },
+        {
+            "tick": 10,
+            "note_pitch": 77,
+            "note_length": 1,
+            "tact": 19
+        },
+        {
+            "tick": 12,
+            "note_pitch": 75,
+            "note_length": 1,
+            "tact": 19
+        },
+        {
+            "tick": 14,
+            "note_pitch": 79,
+            "note_length": 1,
+            "tact": 19
+        },
+        {
+            "tick": 0,
+            "note_pitch": 77,
+            "note_length": 1,
+            "tact": 20
+        },
+        {
+            "tick": 2,
+            "note_pitch": 75,
+            "note_length": 1,
+            "tact": 20
+        },
+        {
+            "tick": 4,
+            "note_pitch": 79,
+            "note_length": 5,
+            "tact": 20
+        },
+        {
+            "tick": 10,
+            "note_pitch": 77,
+            "note_length": 1,
+            "tact": 20
+        },
+        {
+            "tick": 12,
+            "note_pitch": 75,
+            "note_length": 5,
+            "tact": 20
+        },
+        {
+            "tick": 2,
+            "note_pitch": 79,
+            "note_length": 1,
+            "tact": 21
+        },
+        {
+            "tick": 4,
+            "note_pitch": 77,
+            "note_length": 1,
+            "tact": 21
+        },
+        {
+            "tick": 6,
+            "note_pitch": 75,
+            "note_length": 1,
+            "tact": 21
+        },
+        {
+            "tick": 8,
+            "note_pitch": 79,
+            "note_length": 1,
+            "tact": 21
+        },
+        {
+            "tick": 10,
+            "note_pitch": 77,
+            "note_length": 1,
+            "tact": 21
+        },
+        {
+            "tick": 12,
+            "note_pitch": 75,
+            "note_length": 1,
+            "tact": 21
+        },
+        {
+            "tick": 14,
+            "note_pitch": 79,
+            "note_length": 1,
+            "tact": 21
+        },
+        {
+            "tick": 0,
+            "note_pitch": 82,
+            "note_length": 1,
+            "tact": 22
+        },
+        {
+            "tick": 2,
+            "note_pitch": 84,
+            "note_length": 1,
+            "tact": 22
+        },
+        {
+            "tick": 4,
+            "note_pitch": 84,
+            "note_length": 12,
+            "tact": 22
+        },
+        {
+            "tick": 4,
+            "note_pitch": 72,
+            "note_length": 1,
+            "tact": 23
+        },
+        {
+            "tick": 6,
+            "note_pitch": 70,
+            "note_length": 1,
+            "tact": 23
+        },
+        {
+            "tick": 8,
+            "note_pitch": 72,
+            "note_length": 4,
+            "tact": 23
+        },
+        {
+            "tick": 12,
+            "note_pitch": 75,
+            "note_length": 1,
+            "tact": 23
+        },
+        {
+            "tick": 14,
+            "note_pitch": 72,
+            "note_length": 1,
+            "tact": 23
+        },
+        {
+            "tick": 0,
+            "note_pitch": 77,
+            "note_length": 1,
+            "tact": 24
+        },
+        {
+            "tick": 2,
+            "note_pitch": 75,
+            "note_length": 1,
+            "tact": 24
+        },
+        {
+            "tick": 4,
+            "note_pitch": 79,
+            "note_length": 15,
+            "tact": 24
+        }
+    ]
+}

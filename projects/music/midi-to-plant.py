@@ -1,7 +1,7 @@
 from pathlib import Path
 import mido
 import json
-
+import math
 
 """
 Midi am besten zischen c3 und c4
@@ -14,18 +14,15 @@ def midi_to_platforms(midi_file):
     midi = mido.MidiFile(midi_file)
     
     # Initialize the platforms list
-    platforms = []
+    track_extracts = []
     ticks_per_beat = midi.ticks_per_beat  # Get ticks per beat for scaling time
     print(ticks_per_beat)
-    time_offset = 0  # Keep track of elapsed time
-    scale = 10
-    beat_per_second = BPM / 60
-    sec_per_beat = 1 / beat_per_second
     # Process each track in the MIDI file
     for i, track in enumerate(midi.tracks):
+        time_offset = 0  # Keep track of elapsed time
         print(f"Processing track {i}: {track.name}")
         note_start_times = {}  # To track active notes and their start times
-        
+        platforms = []
         for msg in track:
             # Accumulate elapsed time
             time_offset += msg.time
@@ -41,31 +38,35 @@ def midi_to_platforms(midi_file):
                 note_pitch = msg.note
                 if note_pitch in note_start_times:
                     # Calculate duration between note_on and note_off
-                    note_start = int(note_start_times.pop(note_pitch))
+                    note_start = note_start_times.pop(note_pitch)
                     note_duration = time_offset - note_start
+                    note_on_tick = round((note_start / ticks_per_beat) * 4)
+                    note_length = math.ceil((note_duration / ticks_per_beat) * 4)
 
                     # Calculate platform properties
-                    platform = {
-                        "x": int((note_start / ticks_per_beat) * scale),  # Scale start time to x position
-                        "y": 127 - note_pitch,             # Height inversely related to pitch
-                        "w": (note_duration / ticks_per_beat) * scale  # Scale duration to width
-                    }
-                    platforms.append(platform)
-    return platforms
+                    if int(note_duration) > 0:
+                        platform = {
+                            "tick": note_on_tick % 16,  # Scale start time to x position
+                            "note_pitch": 127 - note_pitch,             # Height inversely related to pitch
+                            "note_length": note_length,  # Scale duration to width
+                            "tact": int(note_on_tick / 16),
+                        }
+                        platforms.append(platform)
+        track_extracts.append(platforms)
+    return track_extracts
+
     
 
 # Example usage
-midi_file = "melody_1.mid"
-length_file = "melody_1.mid"  # Replace with your MIDI file path
+midi_file = "garden jam midi datei.midi"
 
-output_file = f"{Path(midi_file).name}.json"
 plts = midi_to_platforms(midi_file)
-length = midi_to_platforms(length_file)
-out_data = {
-    "total_length": length[0]["w"],
-    "platforms": plts
-}
-# Save platforms as a JSON file
-with open(output_file, 'w') as f:
-    json.dump(out_data, f, indent=4)
-print(f"Platforms saved to {output_file}")
+for i, track in enumerate(plts):
+    out_data = {
+        "platforms": track
+    }
+    # Save platforms as a JSON file
+    output_file = f"../../turnip-the-beet/assets/music/{Path(midi_file).name}_{i}.json"
+    with open(output_file, 'w') as f:
+        json.dump(out_data, f, indent=4)
+    print(f"Platforms saved to {output_file}")

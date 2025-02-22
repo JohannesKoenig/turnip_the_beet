@@ -1,39 +1,13 @@
-[gd_resource type="Resource" script_class="Plant" load_steps=17 format=3 uid="uid://f5hqymf4cw51"]
+[gd_resource type="Resource" script_class="Plant" load_steps=10 format=3 uid="uid://f5hqymf4cw51"]
 
 [ext_resource type="Texture2D" uid="uid://bx2ay00mxdjdd" path="res://assets/plants/large/tomato_plant_large.png" id="1_ngrb7"]
 [ext_resource type="Script" path="res://types/plant.gd" id="1_rvcym"]
-[ext_resource type="Script" path="res://synthesizer/note.gd" id="2_wuckd"]
-[ext_resource type="Script" path="res://synthesizer/melodie.gd" id="3_ews1c"]
 [ext_resource type="Resource" uid="uid://c8cif6hlbuvmu" path="res://types/items/tomato.tres" id="4_4ke45"]
 [ext_resource type="Texture2D" uid="uid://dwf83i22otj66" path="res://assets/plants/ripe/tomato_plant_ripe.png" id="5_rsvea"]
 [ext_resource type="Texture2D" uid="uid://v6smw7qxhpji" path="res://assets/plants/small/tomato_plant_small.png" id="6_eu6n6"]
 [ext_resource type="Resource" uid="uid://ccqy44k0hgvsr" path="res://types/items/tomato_seed.tres" id="6_gxkgl"]
 [ext_resource type="Script" path="res://synthesizer/sound_waves/sine_wave.gd" id="7_5k27m"]
 [ext_resource type="Texture2D" uid="uid://chedy45ardt4i" path="res://assets/plants/seed/tomato_seeds.png" id="8_f31tq"]
-
-[sub_resource type="Resource" id="Resource_jd2p5"]
-script = ExtResource("2_wuckd")
-tone = 6
-length = 4
-
-[sub_resource type="Resource" id="Resource_t20ko"]
-script = ExtResource("2_wuckd")
-tone = 4
-length = 4
-
-[sub_resource type="Resource" id="Resource_hxdhn"]
-script = ExtResource("2_wuckd")
-tone = 2
-length = 4
-
-[sub_resource type="Resource" id="Resource_k5ed2"]
-script = ExtResource("2_wuckd")
-tone = 1
-length = 4
-
-[sub_resource type="Resource" id="Resource_sy3g3"]
-script = ExtResource("3_ews1c")
-notes = Array[ExtResource("2_wuckd")]([SubResource("Resource_jd2p5"), SubResource("Resource_t20ko"), SubResource("Resource_hxdhn"), SubResource("Resource_k5ed2")])
 
 [sub_resource type="Resource" id="Resource_xa2m0"]
 script = ExtResource("7_5k27m")
@@ -44,10 +18,13 @@ product = ExtResource("4_4ke45")
 seed = ExtResource("6_gxkgl")
 name = "Tomato"
 season = 1
-melodie = SubResource("Resource_sy3g3")
+midi_file = "res://assets/music/garden jam midi datei.midi_4.json"
 sound_wave = SubResource("Resource_xa2m0")
 seed_texture = ExtResource("8_f31tq")
 small_texture = ExtResource("6_eu6n6")
 large_texture = ExtResource("1_ngrb7")
 ripe_texture = ExtResource("5_rsvea")
-growing_state = 0
+growing_state = null
+seed_to_small = null
+small_to_large = null
+large_to_ripe = null
