@@ -47,6 +47,6 @@ func has_value(x: int, y: int) -> bool:
 static func constructor() -> Inventory:
 	var inventory = Inventory.new()
 	inventory.data = Array2D.constructor(4,3)
-	var apple = load("res://types/items/tomato.tres")
+	var apple = load("res://types/items/tomato_seed.tres")
 	inventory.set_value(1,1,apple)
 	return inventory

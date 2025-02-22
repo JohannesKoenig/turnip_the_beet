@@ -46,6 +46,7 @@ texture = SubResource("GradientTexture2D_76yg2")
 expand_mode = 2
 
 [node name="ItemTexture" type="TextureRect" parent="."]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 tooltip_text = "label"

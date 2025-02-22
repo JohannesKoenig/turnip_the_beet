@@ -4,14 +4,28 @@ class_name Note extends Resource
 @export var length: int = 1
 
 enum Tone {
-	NONE,
-	a1,
-	b1,
-	c1,
-	d1,
-	e1,
-	f1,
-	g1,
+	NONE = 0,
+	c1 = 91,
+	d1 = 89,
+	e1 = 87,
+	f1 = 86,
+	g1 = 84,
+	a1 = 82,
+	b1 = 80,
+	c2 = 79,
+	d2 = 77,
+	e2 = 75,
+	f2 = 74,
+	g2 = 72,
+	a2 = 70,
+	b2 = 68,
+	c3 = 67,
+	d3 = 65,
+	e3 = 63,
+	f3 = 62,
+	g3 = 60,
+	a3 = 58,
+	b3 = 56,
 	bigC1,
 }
 
@@ -33,6 +47,34 @@ static func map_tone(tone: Tone) -> float:
 			return 440
 		Tone.b1:
 			return 493.883
+		Tone.c2:
+			return 523.251
+		Tone.d2:
+			return 587.330
+		Tone.e2:
+			return 659.255
+		Tone.f2:
+			return 698.456
+		Tone.g2:
+			return 783.991
+		Tone.a2:
+			return 880
+		Tone.b2:
+			return 987.767
+		Tone.c3:
+			return 1046.50
+		Tone.d3:
+			return 1174.66
+		Tone.e3:
+			return 1318.51
+		Tone.f3:
+			return 1396.91
+		Tone.g3:
+			return 1567.98
+		Tone.a3:
+			return 1760
+		Tone.b3:
+			return 1975.53
 		Tone.bigC1:
 			return 65.4064
 		_:
